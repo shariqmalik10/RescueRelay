@@ -62,13 +62,13 @@ Deterministic food-intake mappings and source links live in the repository. The 
 
 1. Open the public demo URL in ChatGPT’s in-app browser, or in Chrome 149+ with `chrome://flags/#enable-webmcp-testing` enabled.
 2. Enter any valid email format. No account is created and no email is sent.
-3. Choose **I have food to share** and open the donor workspace.
+3. Choose **Donor — create the offer** and open the donor workspace.
 4. Confirm the prefilled 36-meal offer, select **Save offer and continue**, and run **Check compatible recipients**.
 5. Verify that The Bowery Mission is the preliminary fit and that City Harvest and New York Common Pantry have explicit rule mismatches.
 6. Choose The Bowery Mission, review the handoff, and use the visible **Send simulated handoff** button.
 7. Switch to **Recipient**, prepare an acceptance, and confirm it with the visible human control.
 8. Expand **Live data and agent verification** to inspect the three live API records and the WebMCP registration/invocation evidence.
-9. To test as an agent, ask the in-app browser agent to create the surplus offer, find eligible partners, and prepare the reservation. Then complete the send and final confirmation manually in the page.
+9. To test as an agent, copy the prompt provided on the landing page (or ask the agent to create the surplus offer, find eligible partners, and prepare the reservation). Then complete the send and final confirmation manually in the page.
 
 Local verification:
 
@@ -106,12 +106,13 @@ Use voiceover or narration throughout. Do not use copyrighted music or third-par
 
 ## Screenshot Shot List
 
-1. `artifacts/submission-login.jpg` — product value proposition and simple role entry.
-2. `artifacts/submission-donor.jpg` — structured donor offer with three live nonprofit records and 3/3 donor tools.
-3. `artifacts/submission-live-match.jpg` — explainable eligibility result with live registry details.
-4. `artifacts/submission-human-checkpoint.jpg` — agent-prepared handoff and the donor-only send boundary.
-5. `artifacts/submission-recipient.jpg` — recipient review with 2/2 recipient tools.
-6. `artifacts/submission-recipient-confirm.jpg` — recipient-only confirmation boundary.
+1. `artifacts/submission-thumbnail.jpg` — purpose-built project thumbnail showing the live-data, WebMCP, and human-approval model.
+2. `artifacts/submission-login.jpg` — product value proposition, real/agent/human boundary, and simple role entry.
+3. `artifacts/submission-donor.jpg` — structured donor offer with three live nonprofit records and 3/3 donor tools.
+4. `artifacts/submission-live-match.jpg` — explainable eligibility result with live registry details.
+5. `artifacts/submission-human-checkpoint.jpg` — agent-prepared handoff and the donor-only send boundary.
+6. `artifacts/submission-recipient.jpg` — recipient review with 2/2 recipient tools.
+7. `artifacts/submission-recipient-confirm.jpg` — recipient-only confirmation boundary.
 
 Recommended Devpost gallery set: screenshots 2, 3, 4, 5, and 6.
 
@@ -123,6 +124,7 @@ Recommended Devpost gallery set: screenshots 2, 3, 4, 5, and 6.
 - Verified in the in-app browser: the live source returned 3/3 records; donor registered 3/3 tools; recipient registered 2/2 tools; the complete simulated donor-to-recipient flow worked.
 - Added a root MIT `LICENSE`, a Render Blueprint, public deployment instructions, and six current screenshots.
 - Public deployment verified at `https://rescuerelay.onrender.com`: 3/3 live records loaded, the donor registered 3/3 WebMCP tools, the recipient registered 2/2 tools, and the complete handoff reached its accepted state.
+- Added a judge-focused landing page, a copyable agent test prompt, dynamic live-source status, and a purpose-built Devpost thumbnail.
 - Pending: record/upload the public YouTube demo and confirm personal form answers.
 
 ## Known Limitations

@@ -82,6 +82,7 @@ function AppView({ sessionId, state, actions, backend, loading = false }: AppVie
   const selectedPartner = state.reservation
     ? PARTNERS.find((partner) => partner.id === state.reservation?.partnerId)
     : undefined
+  const workflowStageKey = `${Boolean(state.offer)}:${Boolean(state.matchEvaluatedAt)}:${state.reservation?.status ?? 'none'}:${Boolean(state.reservation?.responseDraft)}`
 
   useEffect(() => {
     if (!identity) return
@@ -92,6 +93,10 @@ function AppView({ sessionId, state, actions, backend, loading = false }: AppVie
     })
     return () => controller.abort()
   }, [actions, identity, role])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [identity, role, workflowStageKey])
 
   const continueDemo = (nextIdentity: DemoIdentity) => {
     sessionStorage.setItem(IDENTITY_KEY, JSON.stringify(nextIdentity))
@@ -124,9 +129,16 @@ function AppView({ sessionId, state, actions, backend, loading = false }: AppVie
     }
   }
 
-  if (!identity) return <DemoLogin onContinue={continueDemo} />
-
   const profileCount = Object.keys(liveData.profiles).length
+  if (!identity) {
+    return (
+      <DemoLogin
+        onContinue={continueDemo}
+        liveRegistry={{ status: liveData.status, count: profileCount, total: PARTNERS.length }}
+      />
+    )
+  }
+
   const registrationComplete = webMcpReport.status === 'supported'
     && webMcpReport.registeredTools.length === webMcpReport.expectedTools.length
 

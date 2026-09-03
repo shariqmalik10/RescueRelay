@@ -127,7 +127,7 @@ export function parseNonprofitResponse(
   }
 }
 
-async function loadLiveRecord(ein: string): Promise<NonprofitApiResponse> {
+async function loadLiveRecordOnce(ein: string): Promise<NonprofitApiResponse> {
   const controller = new AbortController()
   const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
   try {
@@ -144,6 +144,17 @@ async function loadLiveRecord(ein: string): Promise<NonprofitApiResponse> {
     throw error
   } finally {
     window.clearTimeout(timeout)
+  }
+}
+
+async function loadLiveRecord(ein: string): Promise<NonprofitApiResponse> {
+  try {
+    return await loadLiveRecordOnce(ein)
+  } catch {
+    // One quiet retry absorbs brief upstream or cold-start failures without
+    // hiding a persistent problem from the visible source status.
+    await new Promise((resolve) => window.setTimeout(resolve, 250))
+    return loadLiveRecordOnce(ein)
   }
 }
 
