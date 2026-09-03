@@ -82,11 +82,11 @@ npm start
 
 ## Public Demo Link
 
-`TODO_RENDER_URL`
+[https://rescuerelay.onrender.com](https://rescuerelay.onrender.com)
 
 ## Public Repository Link
 
-`TODO_PUBLIC_REPOSITORY_URL`
+[https://github.com/shariqmalik10/RescueRelay](https://github.com/shariqmalik10/RescueRelay)
 
 ## Demo Video
 
@@ -122,7 +122,8 @@ Recommended Devpost gallery set: screenshots 2, 3, 4, 5, and 6.
 - Verified production server: `/healthz` returned 200, the allowlisted `/api/nonprofits` route returned a current ProPublica record, and `/` served the built application.
 - Verified in the in-app browser: the live source returned 3/3 records; donor registered 3/3 tools; recipient registered 2/2 tools; the complete simulated donor-to-recipient flow worked.
 - Added a root MIT `LICENSE`, a Render Blueprint, public deployment instructions, and six current screenshots.
-- Pending: authenticate GitHub, publish the repository, connect Render, verify the public URL and WebMCP tools, record/upload the public YouTube demo, and confirm personal form answers.
+- Public deployment verified at `https://rescuerelay.onrender.com`: 3/3 live records loaded, the donor registered 3/3 WebMCP tools, the recipient registered 2/2 tools, and the complete handoff reached its accepted state.
+- Pending: record/upload the public YouTube demo and confirm personal form answers.
 
 ## Known Limitations
 
@@ -140,9 +141,9 @@ Recommended Devpost gallery set: screenshots 2, 3, 4, 5, and 6.
 - **Organization name:** leave blank unless submitting on behalf of an organization.
 - **App Status:** `TODO_CONFIRM: New or Existing`
 - **If Existing, explain work completed during the submission period:** use the project history and explicitly identify the WebMCP implementation added after August 25, 2026.
-- **Live URL:** `TODO_RENDER_URL`
+- **Live URL:** `https://rescuerelay.onrender.com`
 - **Private testing instructions:** use the numbered testing instructions above; no credentials are required.
-- **Public code repository:** `TODO_PUBLIC_REPOSITORY_URL`
+- **Public code repository:** `https://github.com/shariqmalik10/RescueRelay`
 - **Agent/client used for WebMCP testing:** Codex desktop in-app browser with built-in WebMCP support; reconfirm against the final deployed URL.
 - **AI tools leveraged:** OpenAI Codex for implementation, review, testing, and submission drafting. No generative model is embedded in the RescueRelay runtime.
 - **Learning derived:** `TODO_CONFIRM: None / Moderate / Significant`

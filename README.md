@@ -2,6 +2,8 @@
 
 RescueRelay is a two-sided coordination demo for a New York City public-data pilot. It turns one declared surplus batch into a deterministic recipient match and a human-approved handoff, backed by live IRS-derived nonprofit records.
 
+**Live demo:** [rescuerelay.onrender.com](https://rescuerelay.onrender.com)
+
 ## Current runnable slice
 
 The first implementation slice includes:
