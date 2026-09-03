@@ -85,14 +85,13 @@ function AppView({ sessionId, state, actions, backend, loading = false }: AppVie
   const workflowStageKey = `${Boolean(state.offer)}:${Boolean(state.matchEvaluatedAt)}:${state.reservation?.status ?? 'none'}:${Boolean(state.reservation?.responseDraft)}`
 
   useEffect(() => {
-    if (!identity) return
     const controller = new AbortController()
     setWebMcpReport(checkingWebMcpReport(role))
     void registerRoleTools(role, actions, controller.signal).then((report) => {
       if (!controller.signal.aborted) setWebMcpReport(report)
     })
     return () => controller.abort()
-  }, [actions, identity, role])
+  }, [actions, role])
 
   useEffect(() => {
     window.scrollTo(0, 0)
